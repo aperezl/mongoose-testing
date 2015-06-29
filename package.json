@@ -1,0 +1,27 @@
+{
+  "name": "pruebas",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "node_modules/.bin/mocha -w"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt-nodejs": "0.0.3",
+    "body-parser": "^1.13.1",
+    "cors": "^2.7.1",
+    "express": "^4.13.0",
+    "jwt-simple": "^0.3.0",
+    "method-override": "^2.3.3",
+    "moment": "^2.10.3",
+    "mongoose": "^4.0.6",
+    "passport": "^0.2.2",
+    "passport-http": "^0.2.2"
+  },
+  "devDependencies": {
+    "mocha": "^2.2.5",
+    "should": "^7.0.1"
+  }
+}
