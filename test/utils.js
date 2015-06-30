@@ -2,18 +2,23 @@
 
 var mongoose = require('mongoose');
 
-//process.env.NODE_ENV = 'test';
+
+before(function(done) {
+
+});
+
 beforeEach(function(done) {
 
   function clearDB() {
     for(var i in mongoose.connection.collections) {
-      mongoose.connection.collections[i].remove(function() {}); 
+      mongoose.connection.collections[i].remove(function() {
+      }); 
     }
     return done();
   }
 
   if(mongoose.connection.readyState === 0) {
-    mongoose.connect('mongodb://localhost/testing', function(err) {
+    mongoose.connect('mongodb://localhost/test', function(err) {
       if(err) throw err;
       return clearDB();
     });

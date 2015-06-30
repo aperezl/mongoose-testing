@@ -1,18 +1,21 @@
 // Load required packages
 var mongoose = require('mongoose');
+var Schema   = mongoose.Schema;
 var bcrypt = require('bcrypt-nodejs');
 
 // Define our user schema
 var UserSchema = new mongoose.Schema({
-  username: {
-    type: String,
-    unique: true,
-    required: true
-  },
-  password: {
-    type: String,
-    required: true
-  }
+  username: { type: String, unique: true, required: true },
+  password: { type: String, required: true }
+  
+  /*
+  contacts: [
+    {
+      _contactId: { type: Schema.Types.ObjectId },
+      //status: { type: String, enum: ['accepted', 'pending', 'blocked']}
+    }
+  ]
+  */
 });
 
 // Execute before each user.save() call
@@ -40,6 +43,11 @@ UserSchema.methods.verifyPassword = function(password, cb) {
     cb(null, isMatch);
   });
 };
+
+UserSchema.methods.addContact = function(contact) {
+  var user = this;
+  console.log(user);
+}
 
 // Export the Mongoose model
 module.exports = mongoose.model('User', UserSchema);

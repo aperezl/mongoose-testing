@@ -3,7 +3,6 @@ var passport = require('passport');
 var BasicStrategy = require('passport-http').BasicStrategy;
 var mongoose = require('mongoose');
 var User  = mongoose.model('User');
-var service = require('../services/service');
 var jwt = require('jwt-simple');  
 var moment = require('moment');  
 
